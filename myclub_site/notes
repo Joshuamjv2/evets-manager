@@ -1,0 +1,31 @@
+The WSGI File in Django
+=======================
+WSGI - Web Server Gateway Interface
+Serves as the Interface between the server and our django application.
+
+To host a django site, the server needs to be configured to host wsgi application.
+
+HttpRequest and HttpResponse and Filename objects
+=================================================
+All these are found in the django.http modules.
+A user always makes a request to the server and waits for a response.
+The response is always made by the developer to determine what response is expected from the server.
+
+request and response cycle
+--------------------------
+Hyper text transfer protocol + (s-secure)
+Http is stateless...one request is totally dependent on its own.
+A request does one of four things:
+    -GET - retrieve data from the server
+        -try your best not to make a get request with a form
+    -POST - submit or send data to the server
+        -contact form
+        -creating a blog
+        -creating a new profile on facebook
+    -PUT - Update already existing data on the server
+    -DELETE - Delete already existing data from the server
+
+QueryDicts in python
+====================
+The items method in django works the same as that of python dictionaries. However it returns iterators instead of view object.
+It returns the last value of the key if the key has multiple values.

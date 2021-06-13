@@ -1,0 +1,151 @@
+{% load static humanize event_custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .row{
+            background-color: lightskyblue;
+        }
+
+        .altrow{
+            background-color: lightgray;
+        }
+
+        table td{
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Custom tags filter</h2>
+    {{100|reverse}}
+    <!-- <h1>Template Demo File</h1>
+    <h2>Comment tag</h2> -->
+    <!-- This will show in your source code -->
+        <!-- {% comment %}
+            <p>This wont show in the source code</p>
+        {% endcomment %}
+
+    <h2>Cycle tag</h2>
+    {% for i in '12345' %}
+        <p style="color: {% cycle 'blue' 'brown' 'red' 'cyan'%">
+            Colored Text
+        </p>
+    {% endfor %} -->
+
+    <!-- cycle using a table -->
+    <!-- <p><strong>Cycle tag used to create a table:</strong></p>
+    <table border=0, style="width: 100px;">
+        {% for i in '12345' %}
+            <tr class="{% cycle 'row' 'altrow'%}">
+                <td>i</td>
+            </tr>
+        {% endfor %}
+    </table> -->
+
+    <!-- <p><strong>Reset Cycle tag used to create a table:</strong></p>
+    <table border=0, style="width: 100px;">
+        {% for i in '12345' %}
+            <tr class="{% cycle 'row' 'altrow'%}">
+                <td>i</td>
+            </tr>
+            {%resetcycle%}
+        {% endfor %}
+    </table>
+
+    <h2>The filter tag</h2>
+    {% filter striptags|upper %}
+        <h1>This will be turned to upper case and the html tags <em>removed</em></h1>
+    {% endfilter %}
+
+    <h2>First of tag</h2>
+    {% firstof "" emptylist "This one" "Not this one" %}
+    <br>
+    {% lorem 10 w random %}
+
+    <h2>The regroup tag</h2>
+    {% regroup best_bands by country as band_list %}
+    <ul>
+        {% for band in band_list%}
+        <li>
+            {{band.grouper}}
+            <ul>
+                {% for band in band.list %}
+                    <li>{{band.name}}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>The with tag</h2>
+    
+    {% with total_items=color_list|length %}
+        This list has {{total_items}} item{{total_items|pluralize}}
+    {% endwith %} -->
+    <h1>Template Filters</h1>
+    <h2>add filter</h2>
+    {{ somevar|add:'12' }} <br>
+    {{ somevar|add:anothervar}}
+
+    <!-- <h2>Add slash filter</h2>
+    It is 2{{ 4|addslashes }} <br>
+    {{ "I'm not. She didn't"|addslashes}} <br>
+    {{'He said "NO!"'|addslashes}}
+
+    <h2>Case filters</h2>
+    {{"Convert to LOWERCASE"|lower}} <br>
+    {{"convert to uppercase"|upper}} <br>
+    {{"convert to caitalize"|title}} <br>
+    {{"convert to caitalize"|capfirst}}
+
+    <h2>Date and time filters</h2>
+    {{today|date:"l jS E y"}} <br>
+    {{ today|time:"H:i"}}
+
+    <h2>JSON filter</h2>
+    {{best_bands|json_script:"best_bands"}}
+
+    <h2>The length filter</h2>
+    {{color_list|length_is:"2"}}
+
+    <h2>The makelist filter</h2>
+    {{"Hello"|make_list}}
+
+    <h2>random</h2>
+    {{color_list|random}}
+
+    <h2>You can slice too</h2>
+    {{"Joshuaiscool"|slice:":-1"}}
+
+    <h2>Slugify</h2>
+    {{"Number of my phone"|slugify}} <br>
+    {{"Number of my phone: /\&% joshua is new"|slugify}}
+
+    <h2>Truncating </h2>
+    {{"JohusaBryant"|truncatechars:7}} <br>
+    {{"<em>JohusaBryant</em>"|truncatechars_html:7}}
+    {{"<em>Johusa Bryant</em>"|truncatewords_html:1}}
+
+    <h2>unordered list</h2>
+    {{aussie_bands|unordered_list}} -->
+
+    <h2>Humanization</h2>
+    {{1|apnumber}}, {{25|ordinal}} <br>
+    {{4000|intcomma}} <br>
+    {{4000000000000000000000000000000000000000|intword}} <br>
+    {{tomorrow|naturalday}}
+
+
+
+
+
+</body>
+</html>

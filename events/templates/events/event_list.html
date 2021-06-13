@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    
+    
+    {% comment %}
+        <!-- Displaying Model Data -->
+    {% endcomment %}
+        
+    List View Demo
+{% endblock title %}
+
+
+{% block content %}
+    <h1>All Events in Database</h1>
+    <ul>
+       
+       {% comment %}
+           <!-- {% for event in event_list %} -->
+       {% endcomment %}
+            
+        {% for event in all_events %}
+            <li>
+                <a href="/event/{{event.id}}">
+                    {{event.name}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p><a href="/event/add/">Add Event</a></p>
+{% endblock content %}
+
+
+<!-- What is get-absolute-url used for -->
